@@ -1,11 +1,11 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 ARG BDS_Version=1.20.41.02
 
 ENV VERSION=$BDS_Version
 
 # Install dependencies
-RUN apt-get update && \
-    apt-get install -y unzip curl libcurl4 libssl1.0.0 && \
+RUN apt update && \
+    apt install -y unzip curl libcurl4 libssl1.1 && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and extract the bedrock server
